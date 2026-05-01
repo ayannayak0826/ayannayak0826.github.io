@@ -1,31 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayan Nayak | Portfolio</title>
+<title>Ayan Nayak | Creative Portfolio</title>
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #000000, #0d2b4d);
-  color: white;
-  scroll-behavior: smooth;
+  background: #000;
+  color: #fff;
 }
 
 /* NAVBAR */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
+  padding: 20px 40px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   position: sticky;
@@ -37,10 +34,9 @@ header h1 {
 }
 
 nav a {
-  color: white;
-  margin-left: 15px;
+  color: #fff;
+  margin-left: 20px;
   text-decoration: none;
-  font-size: 14px;
   transition: 0.3s;
 }
 
@@ -52,14 +48,14 @@ nav a:hover {
 .hero {
   height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .hero h2 {
-  font-size: 35px;
+  font-size: 45px;
 }
 
 .hero span {
@@ -73,12 +69,12 @@ nav a:hover {
 
 .btn {
   margin-top: 20px;
-  padding: 10px 25px;
-  background: #00c3ff;
+  padding: 12px 30px;
+  border-radius: 30px;
   border: none;
-  border-radius: 25px;
+  background: #00c3ff;
+  color: #fff;
   cursor: pointer;
-  color: white;
   transition: 0.3s;
 }
 
@@ -86,9 +82,9 @@ nav a:hover {
   background: #0099cc;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -97,50 +93,50 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* CARDS */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* PROJECT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  width: 250px;
+  background: #111;
   border-radius: 15px;
-  backdrop-filter: blur(10px);
+  overflow: hidden;
   transition: 0.3s;
 }
 
+.card img {
+  width: 100%;
+  display: block;
+}
+
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 15px #00c3ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00c3ff;
+}
+
+.card p {
+  padding: 10px;
 }
 
 /* CONTACT */
 a {
   color: #00c3ff;
-  text-decoration: none;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 15px;
   background: #000;
-  font-size: 14px;
+  padding: 15px;
+  text-align: center;
 }
 
 /* MOBILE */
-@media(max-width: 600px) {
-  header {
-    flex-direction: column;
-  }
-
+@media(max-width:600px){
   .hero h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 </style>
@@ -153,27 +149,41 @@ footer {
   <h1>Ayan Nayak</h1>
   <nav>
     <a href="#about">About</a>
-    <a href="#projects">Projects</a>
+    <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
-  <h2>Hello, I'm <span>Ayan Nayak</span></h2>
+  <h2>Hi, I'm <span>Ayan Nayak</span></h2>
   <p>Graphic Designer & Video Editor</p>
-  <button class="btn" onclick="goContact()">Contact Me</button>
+  <button class="btn" onclick="scrollToContact()">Hire Me</button>
 </div>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I create modern graphics and professional video edits that attract attention and engagement.</p>
+  <p>I design creative visuals and edit professional videos that attract audience attention and build strong branding.</p>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="container">
-    <div class="card">🌐 Portfolio Website</div>
-    <div class="card">✍️ Blog Website</div>
+<section id="work">
+  <h2>My Work</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="design1.jpg">
+      <p>Poster Design</p>
+    </div>
+
+    <div class="card">
+      <img src="design2.jpg">
+      <p>Video Editing</p>
+    </div>
+
+    <div class="card">
+      <img src="design3.jpg">
+      <p>Social Media Creative</p>
+    </div>
+
   </div>
 </section>
 
@@ -183,12 +193,12 @@ footer {
 </section>
 
 <footer>
-  © 2026 Ayan Nayak | All Rights Reserved
+  © 2026 Ayan Nayak
 </footer>
 
 <script>
-function goContact() {
-  document.getElementById("contact").scrollIntoView({behavior: "smooth"});
+function scrollToContact(){
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
